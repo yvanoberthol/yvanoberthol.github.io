@@ -1,0 +1,143 @@
+:root {
+    --primary-accent: #0d6efd;
+    --primary-glow: rgba(13, 110, 253, 0.25);
+    --bg-glass: rgba(15, 23, 42, 0.85);
+    --border-glass: rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="light"] {
+    --bg-glass: rgba(255, 255, 255, 0.9);
+    --border-glass: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.code-font {
+    font-family: 'Fira Code', monospace;
+}
+
+/* Glassmorphism Navigation */
+.navbar-glass {
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-glass);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.15), transparent 50%);
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary-accent);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.status-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #198754;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+/* Skill Cards */
+.skill-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--border-glass);
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.15);
+}
+
+/* Terminal Drawer */
+.terminal-card {
+    background-color: #090d16;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    color: #38edf8;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+    background: #1e293b;
+    padding: 8px 16px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* Card Hover Effects */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-glass);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(13, 110, 253, 0.2);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid var(--primary-accent);
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-accent);
+    box-shadow: 0 0 10px var(--primary-accent);
+}
+
+.toast-container {
+    z-index: 1090;
+}
